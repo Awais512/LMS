@@ -20,12 +20,12 @@ model Course {
   categoryId String?
   category   Category? @relation(fields: [categoryId], references: [id])
 
+  chapters    Chapter[]
   attachments Attachment[]
+  purchases   Purchase[]
 
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-  Chapter   Chapter[]
-  Purchase  Purchase[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@index([categoryId])
 }
